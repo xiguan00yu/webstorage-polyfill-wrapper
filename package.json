@@ -1,14 +1,14 @@
 {
   "name": "webstorage-polyfill",
   "version": "1.0.1",
-  "description": "A browser polyfill for localStorage and sessionStorage",
+  "description": "A browser polyfill wrapper for localStorage and sessionStorage",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:AgentME/webstorage-polyfill.git"
+    "url": "git@github.com:cdbhnd/webstorage-polyfill-wrapper.git"
   },
   "keywords": [
     "localStorage",
@@ -16,8 +16,12 @@
     "webStorage",
     "polyfill"
   ],
-  "author": "Chris Cowan <agentme49@gmail.com>",
+  "author": "Uros Sisovic (Codebehind) <sisovic.uros@gmail.com>",
   "contributors": [
+    {
+      "name": "Uros Sisovic",
+      "email": "sisovic.uros@gmail.com"
+    },
     {
       "name": "Remy Sharp",
       "email": "remy@leftlogic.com"
@@ -29,9 +33,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AgentME/webstorage-polyfill/issues"
+    "url": "https://github.com/cdbhnd/webstorage-polyfill-wrapper/issues"
   },
-  "homepage": "https://github.com/AgentME/webstorage-polyfill",
+  "homepage": "https://github.com/cdbhnd/webstorage-polyfill-wrapper",
   "devDependencies": {
     "mocha": "^3.1.0"
   }
