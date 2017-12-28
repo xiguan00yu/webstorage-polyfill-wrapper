@@ -1,6 +1,9 @@
 (function() {
   'use strict';
   try {
+    window.$localStorage = window.localStorage;
+    window.$sessionStorage = window.sessionStorage;
+
     // Test webstorage existence.
     if (!window.localStorage || !window.sessionStorage) throw "exception";
     // Test webstorage accessibility - Needed for Safari private browsing.

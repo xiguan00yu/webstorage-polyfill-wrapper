@@ -47,11 +47,24 @@ describe('webstorage-polyfill-wrapper', function() {
     assert.strictEqual(window.localStorage.getItem('a'), 'abc');
   });
 
-  it('sets localStorage and sessionStorage correctly to $localStorage and $sessionStorage', function() {
+  it('sets localStorage and sessionStorage correctly to $localStorage and $sessionStorage if it is not supported', function() {
     execute();
 
     assert.strictEqual(typeof window.$localStorage.getItem, 'function');
     assert.strictEqual(typeof window.$sessionStorage.getItem, 'function');
+  });
+
+  it('sets localStorage and sessionStorage correctly to $localStorage and $sessionStorage if it is supported', function() {
+    global.window.localStorage = {};
+    global.window.sessionStorage = {};
+
+    execute();
+
+    assert.strictEqual(typeof window.$localStorage.getItem, 'function');
+    assert.strictEqual(typeof window.$sessionStorage.getItem, 'function');
+
+    delete global.window.localStorage;
+    delete global.window.sessionStorage;
   });
 
   it('does not replace in Safari private mode', function() {
