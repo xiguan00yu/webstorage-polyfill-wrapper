@@ -1,10 +1,10 @@
-# webstorage-polyfill
-
-[![Circle CI](https://circleci.com/gh/AgentME/webstorage-polyfill.svg?style=shield)](https://circleci.com/gh/AgentME/webstorage-polyfill)
-[![npm version](https://badge.fury.io/js/webstorage-polyfill.svg)](https://badge.fury.io/js/webstorage-polyfill)
+# webstorage-polyfill-wrapper
 
 This is a cookie-based polyfill for localStorage and sessionStorage for
 browsers that don't implement localStorage or sessionStorage.
 
-Based on https://gist.github.com/jarrodirwin/0ce4c0888336b533b2c4 with numerous
+`window.localStorage` is available at `window.$localStorage` to accomodate browsers that have `storage` disabled (therefore cannot set `window.localStorage`).
+
+- Based on https://github.com/AgentME/webstorage-polyfill
+- Further Based on https://gist.github.com/jarrodirwin/0ce4c0888336b533b2c4 with numerous
 bugs fixed.
