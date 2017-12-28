@@ -13,7 +13,7 @@ function execute() {
   delete require.cache[p];
 }
 
-describe('webstorage-polyfill', function() {
+describe('webstorage-polyfill-wrapper', function() {
   beforeEach(function() {
     global.window = {};
     global.document = {
@@ -45,6 +45,13 @@ describe('webstorage-polyfill', function() {
     assert.strictEqual(window.localStorage.getItem('a'), null);
     window.localStorage.setItem('a', 'abc');
     assert.strictEqual(window.localStorage.getItem('a'), 'abc');
+  });
+
+  it('sets localStorage and sessionStorage correctly to $localStorage and $sessionStorage', function() {
+    execute();
+
+    assert.strictEqual(typeof window.$localStorage.getItem, 'function');
+    assert.strictEqual(typeof window.$sessionStorage.getItem, 'function');
   });
 
   it('does not replace in Safari private mode', function() {

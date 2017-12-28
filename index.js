@@ -97,6 +97,10 @@
 
       var localStorage = new Storage('local');
       var sessionStorage = new Storage('session');
+
+      window.$localStorage = localStorage;
+      window.$sessionStorage = sessionStorage;
+
       try {
         window.localStorage = localStorage;
         window.sessionStorage = sessionStorage;
